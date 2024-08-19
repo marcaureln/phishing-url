@@ -2,7 +2,12 @@
 
 ## Getting Started
 
-**Requirements:** [Conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/index.html)
+### Prerequisites
+
+- [Visual Studio Code](https://code.visualstudio.com/) (recommended). Visual Studio Code will prompt you to install the recommended extensions when you open the project.
+- [Miniconda](https://docs.conda.io/en/latest/miniconda.html). If you already have the full Anaconda distribution installed, you don't need to install Miniconda.
+
+### Setting up the environment
 
 Create a new Conda environment (you only need to do this once):
 
