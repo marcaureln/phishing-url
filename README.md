@@ -15,14 +15,19 @@ Create a new Conda environment (you only need to do this once):
 conda create -n phishing-url python=3.12 pandas numpy matplotlib scikit-learn jupyterlab
 ```
 
-Every time you want to work on the project, activate the Conda environment and start Jupyter Lab:
+Every time you want to work on the project, activate the Conda environment:
 
 ```bash
 conda activate phishing-url
-jupyter lab --no-browser
 ```
 
-You'll see a URL with a token that you can copy and paste into your browser or your IDE to access Jupyter Lab. It should look something like this: `http://localhost:8888/lab?token=...`
+Start the Jupyter Lab server:
+
+```bash
+jupyter lab --no-browser --NotebookApp.token=''
+```
+
+We remove the token requirement so that you can access Jupyter Lab with this URL: <http://localhost:8888/lab> without having to copy and paste the token every time.
 
 When you're done, you can deactivate the environment with:
 
