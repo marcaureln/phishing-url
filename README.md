@@ -24,7 +24,7 @@ conda activate phishing-url
 Start the Jupyter Lab server:
 
 ```bash
-jupyter lab --no-browser --NotebookApp.token=''
+jupyter lab --no-browser --NotebookApp.token='' --NotebookApp.disable_check_xsrf=True
 ```
 
 We remove the token requirement so that you can access Jupyter Lab with this URL: <http://localhost:8888/lab> without having to copy and paste the token every time.
