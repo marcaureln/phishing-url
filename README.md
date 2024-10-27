@@ -4,7 +4,6 @@
 
 ### Prerequisites
 
-- [Visual Studio Code](https://code.visualstudio.com/) (recommended). Visual Studio Code will prompt you to install the recommended extensions when you open the project.
 - [Miniconda](https://docs.conda.io/en/latest/miniconda.html). If you already have the full Anaconda distribution installed, you don't need to install Miniconda.
 - [Make](https://www.gnu.org/software/make/) (optional). Make is commonly pre-installed on Unix-based operating systems. If you're using Windows, you can install Make with [Chocolatey](https://chocolatey.org/): `choco install make`.
 
@@ -22,7 +21,7 @@ Every time you want to work on the project, activate the Conda environment:
 conda activate phishing-url
 ```
 
-If you are using Visual Studio Code, make sure to select the Python interpreter. Open the Command Palette (Ctrl+Shift+P) and search for `Python: Select Interpreter`. Choose the `phishing-url` environment.
+In your IDE, make sure to select the Python interpreter associated with the `phishing-url` Conda environment.
 
 Start the Jupyter Lab server:
 
