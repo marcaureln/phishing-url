@@ -47,6 +47,9 @@ class Source(Base):
     # Relationship to URL table
     urls = relationship("URL", back_populates="source", cascade="all, delete")
 
+    def __repr__(self):
+        return f"<Source(id={self.id}, name={self.name}, url={self.url})>"
+
 
 @dataclasses.dataclass
 class URL(Base):
@@ -63,6 +66,9 @@ class URL(Base):
 
     # Relationship to Source table
     source = relationship("Source", back_populates="urls")
+
+    def __repr__(self):
+        return f"<URL(id={self.id}, source_id={self.source_id}, url={self.url}, is_phishing={self.is_phishing}, is_online={self.is_online})>"
 
 
 if __name__ == "__main__":
