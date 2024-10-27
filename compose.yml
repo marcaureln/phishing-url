@@ -2,7 +2,6 @@ name: phishing-url
 
 services:
   db:
-    # connection url: postgres://postgres:postgres@localhost:5432/phishing_url
     image: postgres:16.4
     environment:
       POSTGRES_USER: postgres
