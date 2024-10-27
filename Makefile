@@ -25,7 +25,7 @@ install:
 # Save the environment to a file for reproducibility.
 # Remove `name` and `prefix` from the file.
 save-env:
-	conda env export --name $(ENV_NAME) > $(CONDA_ENV_FILE); \
+	conda env export --no-builds --name $(ENV_NAME) > $(CONDA_ENV_FILE); \
 	sed -i '' '/^name: /d' $(CONDA_ENV_FILE); \
 	sed -i '' '/^prefix: /d' $(CONDA_ENV_FILE)
 
