@@ -41,8 +41,8 @@ class Source(Base):
     __tablename__ = "source"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    name = Column(Text, nullable=False)
-    url = Column(Text, nullable=False)
+    name = Column(Text, nullable=False, unique=True)
+    url = Column(Text, nullable=False, unique=True)
 
     # Relationship to URL table
     urls = relationship("URL", back_populates="source", cascade="all, delete")
@@ -59,7 +59,7 @@ class URL(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     source_id = Column(Integer, ForeignKey("source.id", ondelete="CASCADE"))
-    url = Column(Text, nullable=False)
+    url = Column(Text, nullable=False, unique=True)
     is_phishing = Column(Boolean, nullable=False)
     is_online = Column(Boolean, default=False)
 
