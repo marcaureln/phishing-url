@@ -41,7 +41,7 @@ class Source(Base):
     __tablename__ = "source"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    name = Column(Text, nullable=False, index=True)
+    name = Column(Text, nullable=False)
     url = Column(Text, nullable=False)
 
     # Relationship to URL table
@@ -58,11 +58,10 @@ class URL(Base):
     __tablename__ = "url"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    source_id = Column(Integer, ForeignKey("source.id", ondelete="CASCADE"), index=True)
-    url = Column(Text, nullable=False, index=True)
-    features = Column(JSON)
-    is_phishing = Column(Boolean, nullable=False, index=True)
-    is_online = Column(Boolean, default=False, index=True)
+    source_id = Column(Integer, ForeignKey("source.id", ondelete="CASCADE"))
+    url = Column(Text, nullable=False)
+    is_phishing = Column(Boolean, nullable=False)
+    is_online = Column(Boolean, default=False)
 
     # Relationship to Source table
     source = relationship("Source", back_populates="urls")
