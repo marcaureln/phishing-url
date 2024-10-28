@@ -6,7 +6,6 @@ https://archive.ics.uci.edu/dataset/967/phiusiil+phishing+url+dataset
 import os
 import pickle
 
-from psycopg2.errorcodes import UNIQUE_VIOLATION
 from ucimlrepo import fetch_ucirepo
 
 from src.data.models import SessionLocal, Source, engine
@@ -36,7 +35,7 @@ if __name__ == "__main__":
 
     try:
         # Create a new source
-        source = Source(name=dataset.metadata.name, url=dataset.metadata.repository_url)
+        source = Source(name="PhiUSIIL Phishing URL", url=dataset.metadata.repository_url)
         s.add(source)
         # Commit the transaction to get the source ID
         s.commit()
@@ -52,10 +51,10 @@ if __name__ == "__main__":
 
         # Insert the new DataFrame into the SQL database
         df.to_sql(
-            name="url", # Table name
-            con=engine, # Database connection
-            if_exists="append", # Do not replace nor drop the table
-            index=False # Do not include the DataFrame index
+            name="url",  # Table name
+            con=engine,  # Database connection
+            if_exists="append",  # Do not replace nor drop the table
+            index=False  # Do not include the DataFrame index
         )
     except Exception as e:
         s.rollback()

@@ -4,10 +4,11 @@ https://www.kaggle.com/datasets/sid321axn/malicious-urls-dataset/data
 """
 
 import os
-import pandas as pd
-import kagglehub
 
-from src.data.models import SessionLocal, Source, engine
+import kagglehub
+import pandas as pd
+
+from src.data.models import SessionLocal, Source
 
 
 def load_dataset():
@@ -25,7 +26,7 @@ if __name__ == "__main__":
     try:
         # Create a new source
         source = Source(
-            name="Kaggle Malicious URLs dataset",
+            name="Kaggle Malicious URLs",
             url="https://www.kaggle.com/datasets/sid321axn/malicious-urls-dataset/data"
         )
         s.add(source)
