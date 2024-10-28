@@ -59,7 +59,7 @@ class URL(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     source_id = Column(Integer, ForeignKey("source.id", ondelete="CASCADE"))
-    url = Column(Text, nullable=False, unique=True)
+    url = Column(Text, nullable=False)
     is_phishing = Column(Boolean, nullable=False)
     is_online = Column(Boolean, default=False)
 
