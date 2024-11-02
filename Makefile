@@ -36,3 +36,10 @@ clean:
 # Remove the environment, conda unused packages and caches.
 clean-all: clean
 	conda clean --all -y
+
+# Load datasets
+load-datasets:
+	python -m src.data.models
+	python -m src.data.phiusiil
+	python -m src.data.phishtank
+	python -m src.data.kaggle
