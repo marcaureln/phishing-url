@@ -7,9 +7,9 @@ import os
 
 from dotenv import load_dotenv
 from sqlalchemy import (
-    JSON,
     Boolean,
     Column,
+    DateTime,
     ForeignKey,
     Integer,
     Text,
@@ -17,6 +17,7 @@ from sqlalchemy import (
     inspect,
 )
 from sqlalchemy.orm import DeclarativeBase, relationship, sessionmaker
+from sqlalchemy.sql import func
 
 load_dotenv()
 
@@ -25,13 +26,28 @@ DATABASE_URL = os.getenv("DATABASE_URL")
 if DATABASE_URL is None:
     raise ValueError("DATABASE_URL is not set")
 
-engine = create_engine(DATABASE_URL)
+engine = create_engine(DATABASE_URL, connect_args={"options": "-c timezone=utc"})
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 
 @dataclasses.dataclass
 class Base(DeclarativeBase):
     """Base model for ORM classes"""
+    __abstract__ = True
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    created_at = Column(
+        DateTime,
+        nullable=False,
+        server_default=func.now(),
+        onupdate=func.now()
+    )
+    updated_at = Column(
+        DateTime,
+        nullable=False,
+        server_default=func.now(),
+        onupdate=func.now()
+    )
 
 
 @dataclasses.dataclass
@@ -40,7 +56,6 @@ class Source(Base):
 
     __tablename__ = "source"
 
-    id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(Text, nullable=False, unique=True)
     url = Column(Text, nullable=False, unique=True)
 
@@ -57,8 +72,7 @@ class URL(Base):
 
     __tablename__ = "url"
 
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    source_id = Column(Integer, ForeignKey("source.id", ondelete="CASCADE"))
+    source_id = Column(Integer, ForeignKey("source.id", ondelete="CASCADE"), nullable=False)
     url = Column(Text, nullable=False)
     is_phishing = Column(Boolean, nullable=False)
     is_online = Column(Boolean, default=False)
@@ -71,6 +85,8 @@ class URL(Base):
 
 
 if __name__ == "__main__":
+    # Uncomment the following line to drop all tables
+    # Base.metadata.drop_all(engine)
     # Create tables if they do not exist
     inspector = inspect(engine)
 
