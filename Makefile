@@ -37,9 +37,6 @@ clean:
 clean-all: clean
 	conda clean --all -y
 
-# Load datasets
-load-datasets:
-	python -m src.data.models
-	python -m src.data.phiusiil
-	python -m src.data.phishtank
-	python -m src.data.kaggle
+# Load dataset
+load-dataset:
+	python src/load_dataset.py
