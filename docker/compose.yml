@@ -1,0 +1,33 @@
+name: phishing-url
+
+services:
+  db:
+    build: postgres
+    container_name: phishing-url-db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: phishing_url
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
+      start_period: 1m
+
+  proxy:
+    image: elestio/squid:v6.8.0
+    container_name: phishing-url-proxy
+    restart: always
+    ports:
+      - '28028:3128'
+    environment:
+      - TZ=UTC
+    volumes:
+      - ./squid/squid.conf:/etc/squid/squid.conf:ro
+      - ./squid/passwords:/etc/squid/passwords
+
+volumes:
+  db-data:
