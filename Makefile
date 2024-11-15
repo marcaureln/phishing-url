@@ -39,4 +39,5 @@ clean-all: clean
 
 # Load dataset
 load-dataset:
+	python src/database.py
 	python src/load_dataset.py
