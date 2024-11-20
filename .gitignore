@@ -166,3 +166,6 @@ cython_debug/
 
 # Unprocessed data
 /data/raw/
+
+# WandB
+/notebooks/wandb/
