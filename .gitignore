@@ -164,8 +164,11 @@ cython_debug/
 # Miscellaneous
 .DS_Store
 
-# Unprocessed data
-/data/raw/
+# Datasets
+data/
+
+# Models
+models/
 
 # WandB
 wandb/
