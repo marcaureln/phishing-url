@@ -3,7 +3,9 @@ channels:
   - conda-forge
   - defaults
 dependencies:
+  - _py-xgboost-mutex=2.0
   - anyio=4.6.2.post1
+  - appdirs=1.4.4
   - appnope=0.1.4
   - argon2-cffi=23.1.0
   - argon2-cffi-bindings=21.2.0
@@ -24,18 +26,22 @@ dependencies:
   - certifi=2024.8.30
   - cffi=1.17.1
   - charset-normalizer=3.4.0
+  - click=8.1.7
   - comm=0.2.2
   - contourpy=1.3.0
   - cycler=0.12.1
   - debugpy=1.8.7
   - decorator=5.1.1
   - defusedxml=0.7.1
+  - docker-pycreds=0.4.0
   - entrypoints=0.4
   - exceptiongroup=1.2.2
   - executing=2.1.0
   - fonttools=4.54.1
   - fqdn=1.5.1
   - freetype=2.12.1
+  - gitdb=4.0.11
+  - gitpython=3.1.43
   - h11=0.14.0
   - h2=4.1.0
   - hpack=4.0.0
@@ -91,6 +97,7 @@ dependencies:
   - libtiff=4.7.0
   - libwebp-base=1.4.0
   - libxcb=1.17.0
+  - libxgboost=2.1.2
   - libzlib=1.3.1
   - llvm-openmp=19.1.2
   - markupsafe=3.0.2
@@ -117,6 +124,7 @@ dependencies:
   - pexpect=4.9.0
   - pickleshare=0.7.5
   - pillow=11.0.0
+  - pip=24.3.1
   - pkgutil-resolve-name=1.3.10
   - platformdirs=4.3.6
   - prometheus_client=0.21.0
@@ -125,6 +133,7 @@ dependencies:
   - pthread-stubs=0.4
   - ptyprocess=0.7.0
   - pure_eval=0.2.3
+  - py-xgboost=2.1.2
   - pycparser=2.22
   - pygments=2.18.0
   - pyobjc-core=10.3.1
@@ -132,7 +141,7 @@ dependencies:
   - pyparsing=3.2.0
   - pysocks=1.7.1
   - python=3.12.7
-  - python-dateutil=2.9.0
+  - python-dateutil=2.9.0.post0
   - python-fastjsonschema=2.20.0
   - python-json-logger=2.0.7
   - python-tzdata=2024.2
@@ -152,6 +161,7 @@ dependencies:
   - seaborn=0.13.2
   - seaborn-base=0.13.2
   - send2trash=1.8.3
+  - setproctitle=1.3.4
   - setuptools=75.1.0
   - six=1.16.0
   - sniffio=1.3.1
@@ -173,11 +183,13 @@ dependencies:
   - unicodedata2=15.1.0
   - uri-template=1.3.0
   - urllib3=2.2.3
+  - wandb=0.18.7
   - wcwidth=0.2.13
   - webcolors=24.8.0
   - webencodings=0.5.1
   - websocket-client=1.8.0
   - wheel=0.44.0
+  - xgboost=2.1.2
   - xorg-libxau=1.0.11
   - xorg-libxdmcp=1.1.5
   - xz=5.2.6
@@ -188,11 +200,7 @@ dependencies:
   - zstd=1.5.6
   - pip:
       - annotated-types==0.7.0
-      - click==8.1.7
       - distro==1.9.0
-      - docker-pycreds==0.4.0
-      - gitdb==4.0.11
-      - gitpython==3.1.43
       - html-sanitizer==2.4.4
       - jiter==0.7.0
       - kagglehub==0.3.3
@@ -200,7 +208,6 @@ dependencies:
       - lxml==5.3.0
       - lxml-html-clean==0.3.1
       - openai==1.53.0
-      - pip==24.3.1
       - protobuf==4.25.5
       - psycopg2-binary==2.9.10
       - pydantic==2.9.2
@@ -208,10 +215,8 @@ dependencies:
       - python-dotenv==1.0.1
       - python-slugify==8.0.4
       - sentry-sdk==2.18.0
-      - setproctitle==1.3.4
       - smmap==5.0.1
       - sqlalchemy==2.0.36
       - text-unidecode==1.3
       - tqdm==4.66.5
       - ucimlrepo==0.0.7
-      - wandb==0.18.7
