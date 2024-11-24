@@ -90,6 +90,7 @@ dependencies:
   - importlib_resources=6.4.5
   - ipykernel=6.29.5
   - ipython=8.29.0
+  - ipywidgets=8.1.5
   - isoduration=20.11.0
   - jedi=0.19.1
   - jinja2=3.1.4
@@ -105,9 +106,10 @@ dependencies:
   - jupyter_events=0.10.0
   - jupyter_server=2.14.2
   - jupyter_server_terminals=0.5.3
-  - jupyterlab=4.2.5
+  - jupyterlab=4.3.1
   - jupyterlab_pygments=0.3.0
   - jupyterlab_server=2.27.3
+  - jupyterlab_widgets=3.0.13
   - kiwisolver=1.4.7
   - krb5=1.21.3
   - lcms2=2.16
@@ -272,6 +274,7 @@ dependencies:
   - webencodings=0.5.1
   - websocket-client=1.8.0
   - wheel=0.44.0
+  - widgetsnbextension=4.0.13
   - xgboost=2.1.2
   - xorg-libxau=1.0.11
   - xorg-libxdmcp=1.1.5
