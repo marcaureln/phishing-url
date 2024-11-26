@@ -61,3 +61,9 @@ To manage Jupyter Notebooks, we use [nb-clean](https://github.com/srstevenson/nb
     ```
 
 By following these steps, you ensure that your Jupyter Notebooks are properly cleaned before being committed to the repository.
+
+## Authors
+
+- **[Dr DIAKO Doffou Jérôme](https://ci.linkedin.com/in/dr-diako-j%C3%A9r%C3%B4me-1972b485)**: Enseignant-Chercheur en Intelligence Artificielle à l'ESATIC ;
+- **[Dr KEUPONDJO Armel](#)**: Coordinateur des Projets au LABTIC ;
+- **[N'GUESSAN Alex Marc-Aurel](https://marcaureln.com)**: Étudiant en Master 2 en Intelligence Artificielle à l'ESATIC ;
